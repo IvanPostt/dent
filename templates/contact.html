@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
-{% load i18n %}
 
-{% block title %}{% trans "Контакты" %}{% endblock %}
+{% block title %}Контакты{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Свяжитесь с Insydent" %}</h1>
-    <p>{% trans "Вы можете связаться с нами по телефону или электронной почте." %}</p>
-    <p><strong>{% trans "Телефон:" %}</strong> +7 (485) 790-66-99</p>
-    <p><strong>{% trans "Email:" %}</strong> info@insydent.com</p>
-    <p><strong>{% trans "Адрес:" %}</strong> {% trans "проспект Андропова 8, Москва" %}</p>
+    <h1>Наши контакты</h1>
+    <p><strong>Телефон:</strong> +7 (485) 790-66-99</p>
+    <p><strong>Email:</strong> info@insydent.com</p>
+    <p><strong>Telegram</strong><a href="https://t.me/InsyDent"target="_blank" class="text-dark mx-2"><i class="fab fa-telegram fa-2x"></i></a></p>
+    <p><strong>Адрес:</strong> Москва, Проспект Андропова 8 м. Технопарк</p>
 
-    <h2 class="mt-5">{% trans "Наше местоположение" %}</h2>
+    <h2 class="mt-5">Наше местоположение</h2>
     <div id="map" style="width: 100%; height: 400px; margin-bottom: 20px;"></div>
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_YANDEX_MAPS_API_KEY&lang=ru_RU" type="text/javascript"></script>
@@ -19,12 +18,12 @@
 
         function init() {
             var myMap = new ymaps.Map("map", {
-                center: [55.695875, 37.664905], // Координаты для проспекта Андропова 8, Москва
+                center: [55.695875, 37.664905],
                 zoom: 16
             });
 
             var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-                balloonContent: '<strong>Наш офис Insydent</strong><br>проспект Андропова 8, Москва'
+                balloonContent: '<strong>Наш офис Insydent</strong><br>Москва, Проспект Андропова 8 м. Технопарк'
             }, {
                 preset: 'islands#icon',
                 iconColor: '#0095b6'

@@ -1,5 +1,35 @@
 /* Custom styles for Insydent */
 
+:root {
+    --bg-color-light: #f0f2f5;
+    --text-color-light: #212529;
+    --navbar-bg-light: #ffffff;
+    --navbar-text-light: #495057;
+    --footer-bg-light: #212529;
+    --footer-text-light: #ffffff;
+    --card-bg-light: #ffffff;
+    --card-shadow-light: rgba(0, 0, 0, 0.1);
+    --link-hover-light: #007bff;
+    --hero-bg-color-light: rgba(0, 123, 255, 0.7);
+    --hero-text-light: white;
+    --list-group-border-light: #e9ecef;
+}
+
+body.dark-theme {
+    --bg-color-light: #212529;
+    --text-color-light: #f8f9fa;
+    --navbar-bg-light: #343a40;
+    --navbar-text-light: #ced4da;
+    --footer-bg-light: #1a1e22;
+    --footer-text-light: #f8f9fa;
+    --card-bg-light: #343a40;
+    --card-shadow-light: rgba(255, 255, 255, 0.1);
+    --link-hover-light: #66b8ff;
+    --hero-bg-color-light: rgba(0, 56, 110, 0.7);
+    --hero-text-light: #f8f9fa;
+    --list-group-border-light: #495057;
+}
+
 html,
 body {
     height: 100%;
@@ -9,37 +39,41 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar {
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,.08);
+    background-color: var(--navbar-bg-light) !important;
+    box-shadow: 0 4px 6px var(--card-shadow-light);
     padding: 1rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-brand {
     font-weight: 700;
-    color: #212529 !important;
+    color: var(--text-color-light) !important;
     font-size: 1.8rem;
-    display: flex; /* Добавлено */
-    align-items: center; /* Добавлено */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
 }
 
 .navbar-logo {
-    height: 40px; /* Установите желаемую высоту */
-    margin-right: 10px; /* Отступ справа от логотипа */
+    height: 40px;
+    margin-right: 10px; 
 }
 
 .navbar-nav .nav-link {
-    color: #495057 !important;
+    color: var(--navbar-text-light) !important;
     margin-right: 15px;
     font-size: 1.05rem;
     transition: color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-    color: #007bff !important;
+    color: var(--link-hover-light) !important;
     transform: translateY(-2px);
 }
 
@@ -50,20 +84,22 @@ main {
 }
 
 .footer {
-    background-color: #212529;
-    color: #ffffff;
+    background-color: var(--footer-bg-light);
+    color: var(--footer-text-light);
     padding: 25px 0;
     text-align: center;
     width: 100%;
     margin-top: auto;
-    box-shadow: 0 -4px 6px rgba(0,0,0,.08);
+    box-shadow: 0 -4px 6px var(--card-shadow-light);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card {
     border: none;
     border-radius: 10px;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    background-color: var(--card-bg-light);
+    box-shadow: 0 0.25rem 0.75rem var(--card-shadow-light);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -78,13 +114,14 @@ main {
 }
 
 .card-title a {
-    color: #212529;
+    color: var(--text-color-light);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .card-title a:hover {
-    color: #0056b3;
+    color: var(--link-hover-light);
 }
 
 .btn-primary {
@@ -100,9 +137,10 @@ main {
 
 .list-group-item {
     border: none;
-    border-bottom: 1px solid #e9ecef;
-    color: #343a40;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid var(--list-group-border-light);
+    background-color: var(--card-bg-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .list-group-item:last-child {
@@ -110,18 +148,19 @@ main {
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef;
-    color: #007bff;
+    background-color: var(--list-group-border-light);
+    color: var(--link-hover-light);
 }
 
 .hero-section {
-    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('https://via.placeholder.com/1500x500?text=Dental+Equipment') no-repeat center center;
+    background: linear-gradient(var(--hero-bg-color-light), var(--hero-bg-color-light)), url('https://via.placeholder.com/1500x500?text=Dental+Equipment') no-repeat center center;
     background-size: cover;
-    color: white;
+    color: var(--hero-text-light);
     padding: 100px 0;
     text-align: center;
     margin-bottom: 40px;
     border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .hero-section h1 {
@@ -143,10 +182,70 @@ main {
 }
 
 .social-icons a {
-    color: #ffffff;
+    color: var(--footer-text-light);
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #007bff; /* Пример изменения цвета при наведении */
+    color: var(--link-hover-light); 
+}
+
+/* About page styles */
+.about-logo {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.feature-section {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--card-bg-light);
+    border-radius: 10px;
+    box-shadow: 0 0.25rem 0.75rem var(--card-shadow-light);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-section h3 {
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+}
+
+/* Home page styles */
+.hero-logo {
+    max-width: 300px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.features-grid {
+    margin-top: 50px;
+}
+
+.feature-item {
+    background-color: var(--card-bg-light);
+    box-shadow: 0 0.25rem 0.75rem var(--card-shadow-light);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h2 {
+    color: var(--text-color-light);
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: var(--text-color-light);
+}
+
+.feature-img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-30 16:50+0000\n"
+"POT-Creation-Date: 2025-11-30 19:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/about.html:4 templates/base.html:25
+#: templates/about.html:4 templates/base.html:28
 msgid "О нас"
 msgstr ""
 
@@ -28,23 +28,38 @@ msgstr ""
 
 #: templates/about.html:8
 msgid ""
-"Мы специализируемся на продаже высококачественного стоматологического "
-"оборудования."
+"INSYDENT – это не просто интернет-магазин стоматологических материалов. Это "
+"команда людей, которые много лет работают в этой сфере и готовы использовать "
+"свой опыт для того, чтобы врачи могли быть уверены в качестве приобретаемых "
+"материалов и надежности их поставщиков."
 msgstr ""
 
-#: templates/base.html:19 templates/home.html:4
+#: templates/about.html:9
+msgid ""
+"Мы ценим время наших клиентов, а потому создали для Вас возможность "
+"приобрести все необходимые материалы у одного поставщика и получить их в "
+"кратчайшие сроки."
+msgstr ""
+
+#: templates/about.html:10
+msgid ""
+"Для врача важно, чтобы пациент был уверен в качестве его работы. Для "
+"«INSYDENT» важно, чтобы врачи были уверены в нашем профессионализме."
+msgstr ""
+
+#: templates/base.html:22 templates/home.html:4
 msgid "Главная"
 msgstr ""
 
-#: templates/base.html:22 templates/catalog.html:5
+#: templates/base.html:25 templates/catalog.html:5
 msgid "Каталог"
 msgstr ""
 
-#: templates/base.html:28 templates/contact.html:4
+#: templates/base.html:31 templates/contact.html:4
 msgid "Контакты"
 msgstr ""
 
-#: templates/base.html:51
+#: templates/base.html:54
 msgid "Все права защищены."
 msgstr ""
 
@@ -73,19 +88,19 @@ msgid "В каталоге пока нет товаров."
 msgstr ""
 
 #: templates/contact.html:7
-msgid "Свяжитесь с Insydent"
+msgid "Наши контакты"
 msgstr ""
 
 #: templates/contact.html:8
-msgid "Вы можете связаться с нами по телефону или электронной почте."
-msgstr ""
-
-#: templates/contact.html:9
 msgid "Телефон:"
 msgstr ""
 
-#: templates/contact.html:10
+#: templates/contact.html:9
 msgid "Email:"
+msgstr ""
+
+#: templates/contact.html:10
+msgid "Telegram"
 msgstr ""
 
 #: templates/contact.html:11

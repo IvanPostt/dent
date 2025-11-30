@@ -1,27 +1,35 @@
 {% extends 'base.html' %}
-{% load i18n %}
-
-{% block title %}{% trans "Главная" %}{% endblock %}
+{% load static %}
+{% block title %}Главная{% endblock %}
 
 {% block content %}
     <div class="hero-section">
-        <h1>{% trans "Добро пожаловать в Insydent" %}</h1>
-        <p>{% trans "Ваш надежный партнер в высококачественном стоматологическом оборудовании." %}</p>
-        <a href="{% url 'catalog' %}" class="btn btn-light btn-lg">{% trans "Перейти в каталог" %}</a>
+        <img src="{% static 'img/insydent_logo.png' %}" alt="Insydent Logo" class="hero-logo mb-3">
+        <p>Ваш надежный партнер в высококачественном стоматологическом оборудовании.</p>
+        <a href="{% url 'catalog' %}" class="btn btn-light btn-lg">Перейти в каталог</a>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>{% trans "Качественные продукты" %}</h2>
-            <p>{% trans "Мы предлагаем широкий ассортимент высококачественных стоматологических инструментов и оборудования от ведущих производителей." %}</p>
+    <div class="row features-grid">
+        <div class="col-md-4 mb-4">
+            <div class="feature-item text-center p-4 border rounded">
+                <img src="{% static 'img/dda.jpg' %}" class="img-fluid mb-3 feature-img">
+                <h2>Качественные продукты</h2>
+                <p>Мы предлагаем широкий ассортимент высококачественных стоматологических инструментов от ведущих производителей.</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>{% trans "Экспертная поддержка" %}</h2>
-            <p>{% trans "Наша команда экспертов всегда готова помочь вам с выбором и технической поддержкой." %}</p>
+        <div class="col-md-4 mb-4">
+            <div class="feature-item text-center p-4 border rounded">
+                <img src="{% static 'img/jua.jpg' %}" class="img-fluid mb-3 feature-img">
+                <h2>Низкие цены</h2>
+                <p>Доступная ценовая политика обеспечивает высокую эффективность наших услуг, делая их выгодной инвестицией.</p>
+            </div>
         </div>
-        <div class="col-md-4">
-            <h2>{% trans "Быстрая доставка" %}</h2>
-            <p>{% trans "Мы гарантируем быструю и надежную доставку ваших заказов по всему региону." %}</p>
+        <div class="col-md-4 mb-4">
+            <div class="feature-item text-center p-4 border rounded">
+                <img src="{% static 'img/huk.jpg' %}" class="img-fluid mb-3 feature-img">
+                <h2>Быстрая доставка</h2>
+                <p>Мы осуществляем доставку заказов во все города России наиболее удобным для Вас способом.</p>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -1,7 +1,6 @@
-{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,25 +18,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}">{% trans "Главная" %}</a>
+                    <a class="nav-link" href="{% url 'home' %}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'catalog' %}">{% trans "Каталог" %}</a>
+                    <a class="nav-link" href="{% url 'catalog' %}">Каталог</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">{% trans "О нас" %}</a>
+                    <a class="nav-link" href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'contact' %}">{% trans "Контакты" %}</a>
+                    <a class="nav-link" href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
             <div class="navbar-nav ml-auto">
-                <form action="{% url 'set_language' %}" method="post" class="form-inline">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                    <button type="submit" name="language" value="ru" class="btn {% if LANGUAGE_CODE == 'ru' %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm mr-2">Русский</button>
-                    <button type="submit" name="language" value="en" class="btn {% if LANGUAGE_CODE == 'en' %}btn-primary{% else %}btn-outline-primary{% endif %} btn-sm mr-2">English</button>
-                </form>
+                <button id="theme-toggle" class="btn btn-link nav-link"><i class="fas fa-sun"></i></button>
                 <span id="current-time" class="navbar-text current-time"></span>
             </div>
         </div>
@@ -51,9 +45,9 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2025 Insydent. {% trans "Все права защищены." %}</p>
+        <p>&copy; <span id="current-year"></span> Insydent. Все права защищены.</p>
         <div class="social-icons mt-2">
-            <a href="YOUR_TELEGRAM_LINK" target="_blank" class="text-white mx-2"><i class="fab fa-telegram fa-2x"></i></a>
+            <p>Наш Телеграмм Канал:<a href="YOUR_TELEGRAM_LINK" target="_blank" class="text-white mx-2"><i class="fab fa-telegram fa-2x"></i></a></p>
             <!-- Вы можете добавить другие иконки социальных сетей здесь -->
         </div>
     </footer>
@@ -62,6 +56,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        // Update current time
         function updateTime() {
             const now = new Date();
             const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
@@ -69,6 +64,35 @@
         }
         setInterval(updateTime, 1000);
         updateTime(); // Initial call to display time immediately
+
+        // Update current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            if (currentTheme === 'dark-theme') {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-theme')) {
+                body.classList.remove('dark-theme');
+                localStorage.setItem('theme', 'light-theme');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                body.classList.add('dark-theme');
+                localStorage.setItem('theme', 'dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
     </script>
 </body>
 </html>
