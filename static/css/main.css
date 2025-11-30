@@ -1,0 +1,152 @@
+/* Custom styles for Insydent */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,.08);
+    padding: 1rem 1.5rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #212529 !important;
+    font-size: 1.8rem;
+    display: flex; /* Добавлено */
+    align-items: center; /* Добавлено */
+}
+
+.navbar-logo {
+    height: 40px; /* Установите желаемую высоту */
+    margin-right: 10px; /* Отступ справа от логотипа */
+}
+
+.navbar-nav .nav-link {
+    color: #495057 !important;
+    margin-right: 15px;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+    transform: translateY(-2px);
+}
+
+main {
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 25px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0,0,0,.08);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-title a {
+    color: #212529;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card-title a:hover {
+    color: #0056b3;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    color: #343a40;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 123, 255, 0.7)), url('https://via.placeholder.com/1500x500?text=Dental+Equipment') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.current-time {
+    color: #28a745; /* Green color for time */
+    font-weight: 500;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
+.social-icons a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Пример изменения цвета при наведении */
+}

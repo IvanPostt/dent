@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# Database
+db.sqlite3
+*.sqlite3
+
+# Media files
+media/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# Django-specific
+*.log
+*.pot
+.DS_Store
+
+# OS generated files
+.DS_Store
+.Trashes
+*.swp
+*.bak

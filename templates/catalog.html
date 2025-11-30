@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans "Каталог" %}{% endblock %}
+
+{% block content %}
+    <h1 class="mt-4 mb-4">{% trans "Наш Каталог" %}</h1>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h3 class="my-4">{% trans "Категории" %}</h3>
+            <div class="list-group">
+                {% for category in categories %}
+                    <a href="#" class="list-group-item">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100">
+                            {% if product.image %}
+                                <a href="#"><img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                            {% else %}
+                                <a href="#"><img class="card-img-top" src="{% static 'img/no_image.png' %}" alt="{% trans "Нет изображения" %}"></a>
+                            {% endif %}
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">{{ product.name }}</a>
+                                </h4>
+                                <h5>{{ product.price }} {% trans "руб." %}</h5>
+                                <p class="card-text">{{ product.description|truncatechars:100 }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="btn btn-primary">{% trans "Подробнее" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <div class="col-12">
+                        <p>{% trans "В каталоге пока нет товаров." %}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.col-lg-9 -->
+    </div>
+    <!-- /.row -->
+{% endblock %}
